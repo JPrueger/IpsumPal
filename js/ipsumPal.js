@@ -96,6 +96,13 @@ function ipsumPal() {
       container.appendChild(wrapper);
       element.parentNode.insertBefore(container.cloneNode(true), element);
       element.parentNode.insertBefore(icon.cloneNode(true), element);
+
+      const ipsumPalContainer = document.querySelectorAll(
+        ".ipsum-pal__container"
+      );
+      ipsumPalContainer.forEach((element) => {
+        element.style.display = "none";
+      });
     }
   });
 }
