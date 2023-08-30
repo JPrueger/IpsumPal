@@ -26,5 +26,10 @@ function ipsumPal() {
     link.rel = "stylesheet";
     document.head.appendChild(link);
 
+    const formItemBody = document.querySelectorAll(".sb-form-item__body");
+    formItemBody.forEach((element) => {
+      element.style.position = "relative";
+    });
+
   });
 }
