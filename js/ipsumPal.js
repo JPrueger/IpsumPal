@@ -10,3 +10,21 @@ ipsumPalDetectInputs.addEventListener("click", async () => {
     function: ipsumPal,
   });
 });
+
+/**
+ * @description Initializes and configures IpsumPal within the current web page.
+ *              This function injects CSS, adds user interface elements, and handles user interactions.
+ */
+function ipsumPal() {
+  chrome.storage.sync.get(() => {
+    /**
+     * Inject CSS
+     */
+    const link = document.createElement("link");
+    link.href = chrome.runtime.getURL("css/ipsumPal.css");
+    link.type = "text/css";
+    link.rel = "stylesheet";
+    document.head.appendChild(link);
+
+  });
+}
