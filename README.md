@@ -2,6 +2,8 @@
 
 IpsumPal streamlines unhappy path tests by allowing character counts from 30 to 300 or custom values for Storyblok field population.
 
+![](img/option-demo.png)
+
 ---
 
 **IpsumPal** is a browser extension for Google Chrome, originally made by **Jeannine Prueger**. Its main purpose is to make unhappy path testing easier. **IpsumPal** identifies every [Storyblok](https://www.storyblok.com/) input field present on the current page. It provides a trio of pre-defined buttons, spanning character counts from 30 to 300. Additionally, there is the flexibility to set a custom word count according to anyone's preferences.
