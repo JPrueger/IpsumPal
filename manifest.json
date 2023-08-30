@@ -1,0 +1,39 @@
+{
+  "name": "IpsumPal",
+  "manifest_version": 3,
+  "version": "1.0.0",
+
+  "author": "Jeannine Prueger",
+  "description": "IpsumPal streamlines unhappy path tests by allowing character counts from 30 to 300 or custom values for Storyblok field population.",
+
+  "icons": {
+    "48": "img/icon.png"
+  },
+
+  "web_accessible_resources": [
+    {
+      "resources": ["css/ipsumPal.css"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+
+  "background": {
+    "service_worker": "js/background.js"
+  },
+
+  "action": {
+    "default_popup": "ipsumPal.html",
+    "default_title": "IpsumPal",
+    "default_icon": {
+      "16": "img/16.png",
+      "22": "img/22.png",
+      "24": "img/24.png",
+      "32": "img/32.png",
+      "48": "img/48.png"
+    }
+  },
+
+  "permissions": ["storage", "activeTab", "scripting", "tabs", "notifications"],
+
+  "host_permissions": ["http://*/", "https://*/"]
+}
