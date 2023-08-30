@@ -31,5 +31,15 @@ function ipsumPal() {
       element.style.position = "relative";
     });
 
+    document.querySelectorAll('[class="rte__content"], [dir="ltr"]').forEach((element) => {
+      if (element.getAttribute('class') === 'rte__content') {
+        triggerIpsumPal('rte__content', element);
+      } else if (element.getAttribute('dir') === 'ltr') {
+        triggerIpsumPal('ltr', element);
+      }
+    });
+
+    function triggerIpsumPal(type, element) {
+    }
   });
 }
