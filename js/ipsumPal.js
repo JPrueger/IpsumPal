@@ -121,6 +121,104 @@ function ipsumPal() {
         setHoverState(button);
 
 
+      /**
+       * @description This function generates random Lorem Ipsum text with a specified character count
+       * @param {number} charCount 
+       * @returns a string containing the generated Lorem Ipsum text
+       */
+      function createRandomLoremIpsumText(charCount) {
+        const words = [
+          "Lorem",
+          "ipsum",
+          "dolor",
+          "sit",
+          "amet",
+          "consetetur",
+          "labore",
+          "sadipscing",
+          "elitr",
+          "sed",
+          "diam",
+          "nonumy",
+          "eirmod",
+          "tempor",
+          "utt",
+          "invidunt",
+          "laboris",
+          "nisi",
+          "ex",
+          "anim",
+          "dolore",
+          "ut",
+          "aliquip",
+          "dolore",
+          "labore",
+          "aliqua",
+          "dolore",
+          "Ut",
+          "takimata",
+          "minim",
+          "veniam",
+          "quist",
+          "nostrud",
+          "exercitation",
+          "ullamco",
+          "hendrerit",
+          "ea",
+          "Duis",
+          "aute",
+          "esse",
+          "dolour",
+          "consequat",
+          "in",
+          "reperehenderit",
+          "in",
+          "gubergren",
+          "velit",
+          "esse",
+          "cillum",
+          "velr",
+          "fugiat",
+          "nulla",
+          "pariatur",
+          "Excepteur",
+          "dolore",
+          "Non",
+          "facilisis",
+          "sunt",
+          "sint",
+          "in",
+          "culpa",
+          "qugi",
+          "officia",
+          "deserunt",
+          "moellit",
+          "anigm",
+          "id",
+          "occaecat",
+          "Est",
+          "laborum",
+          "cupidatat",
+          "adipiscing",
+          "soluta",
+          "feugagit",
+        ];
+
+        let text = "";
+
+        while (text.length < charCount) {
+          const randomWords = words[Math.floor(Math.random() * words.length)];
+          const remainingCharacters = charCount - text.length;
+
+          text +=
+            remainingCharacters >= randomWords.length
+              ? randomWords + " "
+              : randomWords.substring(0, remainingCharacters);
+        }
+
+        return text.trim();
+      }
+
 
       /**
        * @description Adds Lorem Ipsum text to an input field when button is clicked
