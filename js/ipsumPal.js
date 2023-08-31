@@ -219,6 +219,16 @@ function ipsumPal() {
         return text.trim();
       }
 
+      /**
+       * @description Toggles the visibility of all elements with the class "ipsum-pal__container"
+       */
+      function toggleIpsumPalContainerVisibility() {
+        document
+          .querySelectorAll(".ipsum-pal__container")
+          .forEach((element) => {
+            element.style.display = "none";
+          });
+      }
 
       /**
        * @description Adds Lorem Ipsum text to an input field when button is clicked
