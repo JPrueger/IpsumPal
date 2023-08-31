@@ -120,6 +120,30 @@ function ipsumPal() {
 
         setHoverState(button);
 
+        const wrapperButtons =
+          button.previousElementSibling.firstChild.firstChild.firstChild
+            .nextElementSibling;
+
+        wrapperButtons
+          .querySelectorAll(".ipsum-pal__button")
+          .forEach((button, index) => {
+            setHoverState(button);
+
+            switch (index) {
+              case 0:
+                addLoremIpsumTextToInput(button, 30);
+                break;
+              case 1:
+                addLoremIpsumTextToInput(button, 100);
+                break;
+              case 2:
+                addLoremIpsumTextToInput(button, 300);
+                break;
+              default:
+            }
+          });
+      });
+
 
       /**
        * @description This function generates random Lorem Ipsum text with a specified character count
