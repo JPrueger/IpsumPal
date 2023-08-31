@@ -31,13 +31,15 @@ function ipsumPal() {
       element.style.position = "relative";
     });
 
-    document.querySelectorAll('[class="rte__content"], [dir="ltr"]').forEach((element) => {
-      if (element.getAttribute('class') === 'rte__content') {
-        triggerIpsumPal('rte__content', element);
-      } else if (element.getAttribute('dir') === 'ltr') {
-        triggerIpsumPal('ltr', element);
-      }
-    });
+    document
+      .querySelectorAll('[class="rte__content"], [dir="ltr"]')
+      .forEach((element) => {
+        if (element.getAttribute("class") === "rte__content") {
+          triggerIpsumPal("rte__content", element);
+        } else if (element.getAttribute("dir") === "ltr") {
+          triggerIpsumPal("ltr", element);
+        }
+      });
 
     function triggerIpsumPal(type, element) {
       const icon = document.createElement("div");
@@ -160,15 +162,17 @@ function ipsumPal() {
            * For 'ltr' elements (input fields), fill the input with random text and trigger an input event as well
            * Finally, toggle the visibility of the IpsumPal container
            */
-          if(type === 'rte__content') {
+          if (type === "rte__content") {
             const input =
-              element.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling.firstChild.firstChild;
+              element.parentNode.parentNode.parentNode.nextElementSibling
+                .nextElementSibling.firstChild.firstChild;
             input.innerHTML = createRandomLoremIpsumText(customInput);
             dispatchEventInput(input);
             toggleIpsumPalContainerVisibility();
           } else {
             const input =
-              element.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling;
+              element.parentNode.parentNode.parentNode.nextElementSibling
+                .nextElementSibling;
             input.value = createRandomLoremIpsumText(customInput);
             dispatchEventInput(input);
             toggleIpsumPalContainerVisibility();
@@ -178,7 +182,7 @@ function ipsumPal() {
 
       /**
        * @description This function generates random Lorem Ipsum text with a specified character count
-       * @param {number} charCount 
+       * @param {number} charCount
        * @returns a string containing the generated Lorem Ipsum text
        */
       function createRandomLoremIpsumText(charCount) {
@@ -310,9 +314,10 @@ function ipsumPal() {
            * For 'ltr' elements (input fields), fill the input with random text and trigger an input event as well
            * Finally, toggle the visibility of the IpsumPal container
            */
-          if(type === 'rte__content') {
+          if (type === "rte__content") {
             const input =
-              button.parentNode.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling.firstChild.firstChild;
+              button.parentNode.parentNode.parentNode.parentNode
+                .nextElementSibling.nextElementSibling.firstChild.firstChild;
             input.focus();
             input.innerHTML = createRandomLoremIpsumText(charCount);
             dispatchEventInput(input);
