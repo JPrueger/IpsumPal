@@ -144,6 +144,37 @@ function ipsumPal() {
           });
       });
 
+      const submitButton = document.querySelectorAll(
+        ".ipsum-pal__submit-custom-length-input"
+      );
+
+      submitButton.forEach((element) => {
+        setHoverState(element);
+
+        element.addEventListener("click", function () {
+          const customInput = element.previousElementSibling.value;
+
+          /**
+           * Depending on the 'type' parameter:
+           * For 'rte__content' elements (rich text fields), find the corresponding input field, fill it with random text, and trigger an input event
+           * For 'ltr' elements (input fields), fill the input with random text and trigger an input event as well
+           * Finally, toggle the visibility of the IpsumPal container
+           */
+          if(type === 'rte__content') {
+            const input =
+              element.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling.firstChild.firstChild;
+            input.innerHTML = createRandomLoremIpsumText(customInput);
+            dispatchEventInput(input);
+            toggleIpsumPalContainerVisibility();
+          } else {
+            const input =
+              element.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling;
+            input.value = createRandomLoremIpsumText(customInput);
+            dispatchEventInput(input);
+            toggleIpsumPalContainerVisibility();
+          }
+        });
+      });
 
       /**
        * @description This function generates random Lorem Ipsum text with a specified character count
