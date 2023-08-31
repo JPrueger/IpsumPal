@@ -231,6 +231,18 @@ function ipsumPal() {
       }
 
       /**
+       * @description Dispatches an "input" event on the provided input element
+       * @param {HTMLElement} input
+       */
+      function dispatchEventInput(input) {
+        const inputEvent = new Event("input", {
+          bubbles: true,
+          cancelable: true,
+        });
+        input.dispatchEvent(inputEvent);
+      }
+
+      /**
        * @description Adds Lorem Ipsum text to an input field when button is clicked
        * @param {HTMLElement} button
        * @param {number} charCount
