@@ -1,0 +1,95 @@
+.ipsum-pal__icon {
+  width: 16px;
+  height: 16px;
+  margin-bottom: 5px;
+  position: absolute;
+  right: -3px;
+  top: -5px;
+  bottom: 30px;
+  z-index: 1;
+}
+
+.ipsum-pal__wrapper {
+  background-color: #002357;
+  position: absolute;
+  width: 295px;
+  height: 235px;
+  border-radius: 10px;
+  rotate: -4deg;
+  right: 4px;
+  top: 22px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ipsum-pal__wrapper--buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ipsum-pal__predefined-paragraph {
+  font-size: 16px;
+}
+
+.ipsum-pal__predefined-paragraph,
+.ipsum-pal__custom-paragraph,
+.ipsum-pal__custom-length-input,
+.ipsum-pal__submit-custom-length-input {
+  color: white;
+}
+
+.ipsum-pal__button {
+  margin-bottom: 20px;
+  color: #002357;
+  background-color: #ffdc9a;
+  border: 1px solid #002357;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.ipsum-pal__custom-length-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.ipsum-pal__custom-paragraph {
+  font-size: 16px;
+  text-align: center;
+}
+
+.ipsum-pal__custom-paragraph,
+.ipsum-pal__wrapper--buttons,
+.ipsum-pal__predefined-paragraph {
+  margin-bottom: 16px;
+}
+
+.ipsum-pal__custom-length-input {
+  background-color: transparent;
+  padding-bottom: 4px;
+  font-size: 14px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 1px solid white;
+  margin-right: 12px;
+  max-width: 75px;
+  max-height: 28px;
+}
+
+.ipsum-pal__submit-custom-length-input {
+  background-color: #002357;
+  border: 1px solid white;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+  display: flex;
+}
