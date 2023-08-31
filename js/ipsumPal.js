@@ -123,6 +123,38 @@ function ipsumPal() {
 
 
       /**
+       * @description Adds Lorem Ipsum text to an input field when button is clicked
+       * @param {HTMLElement} button
+       * @param {number} charCount
+       */
+      function addLoremIpsumTextToInput(button, charCount) {
+        button.addEventListener("click", function () {
+          /**
+           * Depending on the 'type' parameter:
+           * For 'rte__content' elements (rich text fields), find the corresponding input field, fill it with random text, and trigger an input event
+           * For 'ltr' elements (input fields), fill the input with random text and trigger an input event as well
+           * Finally, toggle the visibility of the IpsumPal container
+           */
+          if(type === 'rte__content') {
+            const input =
+              button.parentNode.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling.firstChild.firstChild;
+            input.focus();
+            input.innerHTML = createRandomLoremIpsumText(charCount);
+            dispatchEventInput(input);
+            toggleIpsumPalContainerVisibility();
+          } else {
+            const input =
+              button.parentNode.parentNode.parentNode.parentNode
+                .nextElementSibling.nextElementSibling;
+            input.focus();
+            input.value = createRandomLoremIpsumText(charCount);
+            dispatchEventInput(input);
+            toggleIpsumPalContainerVisibility();
+          }
+        });
+      }
+
+      /**
        * @description Sets hover state for a button element, changing the cursor on hover
        * @param {HTMLElement} button
        */
