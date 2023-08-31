@@ -103,6 +103,39 @@ function ipsumPal() {
       ipsumPalContainer.forEach((element) => {
         element.style.display = "none";
       });
+
+      document.querySelectorAll(".ipsum-pal__icon").forEach((button) => {
+        const container = button.previousElementSibling;
+        let isContainerVisible = false;
+
+        button.addEventListener("click", () => {
+          if (isContainerVisible) {
+            container.style.display = "none";
+          } else {
+            container.style.display = "flex";
+          }
+
+          isContainerVisible = !isContainerVisible;
+        });
+
+        setHoverState(button);
+
+
+
+      /**
+       * @description Sets hover state for a button element, changing the cursor on hover
+       * @param {HTMLElement} button
+       */
+      function setHoverState(button) {
+        button.addEventListener(
+          "mouseover",
+          () => (button.style.cursor = "pointer")
+        );
+        button.addEventListener(
+          "mouseout",
+          () => (button.style.cursor = "auto")
+        );
+      }
     }
   });
 }
