@@ -16,7 +16,6 @@ ipsumPalDetectInputs.addEventListener("click", async () => {
  *              This function injects CSS, adds user interface elements, and handles user interactions.
  */
 function ipsumPal() {
-  chrome.storage.sync.get(() => {
     /**
      * Inject CSS
      */
@@ -356,5 +355,4 @@ function ipsumPal() {
         );
       }
     }
-  });
 }
