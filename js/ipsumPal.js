@@ -41,6 +41,13 @@ function ipsumPal() {
         }
       });
 
+    /**
+     * @description This fn generates a user interface component called IpsumPal, which allows users to insert Lorem Ipsum text into different types of input fields
+     * It creates a customizable container with predefined text lengths and a custom input option, as well as an icon that toggles the visibility of this container
+     * Users can click on predefined text lengths to insert Lorem Ipsum text or enter a custom text length and click "submit" to insert text of that length
+     * @param {string} type - The type of input field where Lorem Ipsum text should be inserted. It can be "rte__content" for rich text fields or "ltr" for regular text input fields
+     * @param {HTMLElement} element - The target element near which the IpsumPal component should be inserted
+     */
     function triggerIpsumPal(type, element) {
       const icon = document.createElement("div");
       icon.classList.add("ipsum-pal__icon");
