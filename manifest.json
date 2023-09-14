@@ -33,7 +33,7 @@
     }
   },
 
-  "permissions": ["scripting", "tabs"],
+  "permissions": ["scripting"],
 
   "host_permissions": ["https://app.storyblok.com/"]
 }
